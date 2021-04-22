@@ -21,3 +21,19 @@ greeting="hello,${yourName}!"
 echo $greeting
 echo ${greeting:1:4} # 输出 ello
 echo `expr index "${greeting}" tls`
+
+bools=(football basketball socorball pingpang)
+bools[5]="666"
+echo ${bools[0]}
+bools_lenth=${#bools[*]}
+football_length=${#bools[0]}
+:<<E
+获取数组里的元素
+E
+echo '素组的所有元素'${bools[*]}
+echo '数组的长度'${bools_lenth}
+echo '数组的首个元素长度'${football_length}
+#循环遍历数组中所有元素
+for bool in ${bools[*]};do
+	echo ${bool}
+done
