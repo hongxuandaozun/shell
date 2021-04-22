@@ -1,6 +1,6 @@
 #!/bin/bash
-yourname="test name"
-echo $yourname
+yourName="test name"
+echo "${yourName}"
 
 ################测试读取文件
 for file in $(ls /etc);do
@@ -14,5 +14,10 @@ done
 myUrl="https://www.google.com"
 readonly myUrl
 echo ${myUrl}
-myUrl="https://www.baidu.com"
-echo $myUrl
+# myUrl="https://www.baidu.com"
+# echo $myUrl
+
+greeting="hello,${yourName}!"
+echo $greeting
+echo ${greeting:1:4} # 输出 ello
+echo `expr index "${greeting}" tls`
